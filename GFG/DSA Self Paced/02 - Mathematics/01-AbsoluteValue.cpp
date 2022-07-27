@@ -1,5 +1,9 @@
 /*
-    Problem:        Print all factors of N in increasing order
+    Problem:            1. Absolute Value
+    Path:               GFG/DSA Self Paced/Mathematics/Problems/
+    Date:               25/07/2021
+    Last Updated:       25/07/2021
+    Author:             Rushiraj Parekh
 */
 
 #include <bits/stdc++.h>
@@ -27,39 +31,37 @@ using namespace std;
 
 /**********************************/
 
-ll power(ll x, ll n){
+ll fun(ll x, ll n){
     ll res = 1;
     while(n){
-        if(x&1) res *= x;
+        if(n&1) res *= x;
         x *= x;
         n >>= 1;
     }
     return res;
 }
 
-/***********************************/
-void solve()
-{
-    ll n, i;
-    cin>>n;
-    for(i=1; i*i<=n; i++){
-        if(n%i == 0) cout<<i<<" ";
-    }
-    i--;
-    if(i*i == n) i--;
-    for(; i>=1; i--){
-        if(n%i == 0) cout<<n/i<<" ";
-    }
-    cout<<ee;
-}
 
 /***********************************/
-int main()
-{   
-    // speedy;
-    ll t=1;
-    cin>>t;
-    while(t--)
-        solve();
+class Solution{
+    public:
+        int absolute(int I) {
+        // Your code goes here
+        return abs(I);
+    }
+
+};
+
+/***********************************/
+
+int main() {
+    int T;    // number of testcases
+    cin >> T; // input number of testcases
+    while (T--) {
+        int I;
+        cin >> I;
+        Solution ob;
+        cout << ob.absolute(I) << endl; // print the output
+    }
     return 0;
 }
